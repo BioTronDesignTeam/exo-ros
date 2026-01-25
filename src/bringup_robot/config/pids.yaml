@@ -1,0 +1,23 @@
+left_hip_joint:
+  p: 200.0       # Proportional gain
+  i: 0.1         # Integral gain
+  d: 20.0        # Derivative gain
+  i_clamp: 2.0   # Maximum absolute value for the integral term
+
+left_knee_joint:
+  p: 150.0       
+  i: 0.05        
+  d: 15.0        
+  i_clamp: 1.5   
+
+right_hip_joint:
+  p: 150.0       
+  i: 0.05        
+  d: 15.0        
+  i_clamp: 1.5   
+
+right_knee_joint:
+  p: 150.0       
+  i: 0.05        
+  d: 15.0        
+  i_clamp: 1.5   

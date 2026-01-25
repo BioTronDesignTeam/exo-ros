@@ -1,0 +1,108 @@
+<mujoco model="exo_model">
+  <compiler angle="radian" meshdir="meshes"/>
+  
+  <!-- Assets -->
+  <asset>
+    <texture name="texplane" type="2d" builtin="checker" rgb1="0 0 0" rgb2="0.8 0.8 0.8" width="100" height="100"/>
+    <material name="matplane" reflectance="0" texture="texplane" texrepeat="1 1" texuniform="true"/>
+    <material name="black" rgba="0 0 0 1"/>
+    <material name="grey" rgba="0.7 0.7 0.7 1"/>
+    <material name="default_material" rgba="0.7 0.7 0.7 1"/>
+  </asset>
+
+  <!-- Worldbody -->
+  <worldbody>
+    <!-- Lights -->
+    <light directional="true" diffuse="0.4 0.4 0.4" specular="0.1 0.1 0.1" pos="0 0 5" dir="0 0 -1" castshadow="false"/>
+    <light directional="true" diffuse="0.6 0.6 0.6" specular="0.2 0.2 0.2" pos="0 0 4" dir="0 0 -1"/>
+
+    <!-- Ground -->
+    <geom name="ground" type="plane" pos="0 0 0" size="10 10 0.001" rgba="0.8 0.8 0.8 1" condim="3" conaffinity="15"/>
+
+    <!-- Robot root -->
+    <body name="root" pos="0 0 1.6">
+      <freejoint name="root"/>
+      <site name="root_site" pos="0 0 0"/>
+
+      <body name="base_link" pos="0 0 0">
+        <geom name="base_link_visual_0" type="box" size="0.1 0.5 0.1" rgba="0.7 0.7 0.7 1"/>
+
+        <!-- Left leg -->
+        <body name="left_hip_motor_link" pos="0 -0.55 0">
+          <joint name="left_hip_joint" type="hinge" axis="0 1 0" range="-1.5 1.5"
+                 limited="true" damping="0.01" armature="0.01" frictionloss="0.01"/>
+          <inertial pos="0 0 0" mass="0.3" diag="0.002 0.002 0.002"/>
+          <geom name="left_hip_motor_link_visual" type="cylinder" size="0.2 0.075" material="black"
+                condim="4" contype="1" conaffinity="15" friction="0.9 0.2 0.2" solref="0.001 2"/>
+
+          <body name="left_thigh_stand_link" pos="0 0 -0.2">
+            <inertial pos="0 0 -0.25" mass="1.0" diag="0.0341667 0.0241667 0.0166667"/>
+            <geom name="left_thigh_stand_link_visual" type="box" size="0.1 0.1 0.25" material="grey"
+                  pos="0 0 -0.25" condim="4" contype="1" conaffinity="15" friction="0.9 0.2 0.2" solref="0.001 2"/>
+
+            <body name="left_knee_motor_link" pos="0 0 -0.7">
+              <inertial pos="0 0 0" mass="0.3" diag="0.002 0.002 0.002"/>
+              <geom name="left_knee_motor_link_visual" type="cylinder" size="0.2 0.075" material="black"
+                    condim="4" contype="1" conaffinity="15" friction="0.9 0.2 0.2" solref="0.001 2"/>
+
+              <body name="left_shin_stand_link" pos="0 0 0">
+                <joint name="left_knee_joint" type="hinge" axis="0 1 0" range="0 1.5"
+                       limited="true" damping="0.01" armature="0.01" frictionloss="0.01"/>
+                <inertial pos="0 0 -0.35" mass="1.2" diag="0.065 0.053 0.02"/>
+                <geom name="left_shin_stand_link_visual" type="box" size="0.1 0.1 0.35" material="grey"
+                      pos="0 0 -0.35" condim="4" contype="1" conaffinity="15" friction="0.9 0.2 0.2" solref="0.001 2"/>
+              </body>
+            </body>
+          </body>
+        </body>
+
+        <!-- Right leg -->
+        <body name="right_hip_motor_link" pos="0 0.55 0">
+          <joint name="right_hip_joint" type="hinge" axis="0 1 0" range="-1.5 1.5"
+                 limited="true" damping="0.01" armature="0.01" frictionloss="0.01"/>
+          <inertial pos="0 0 0" mass="0.3" diag="0.002 0.002 0.002"/>
+          <geom name="right_hip_motor_link_visual" type="cylinder" size="0.2 0.075" material="black"
+                condim="4" contype="1" conaffinity="15" friction="0.9 0.2 0.2" solref="0.001 2"/>
+
+          <body name="right_thigh_stand_link" pos="0 0 -0.2">
+            <inertial pos="0 0 -0.25" mass="1.0" diag="0.0341667 0.0241667 0.0166667"/>
+            <geom name="right_thigh_stand_link_visual" type="box" size="0.1 0.1 0.25" material="grey"
+                  pos="0 0 -0.25" condim="4" contype="1" conaffinity="15" friction="0.9 0.2 0.2" solref="0.001 2"/>
+
+            <body name="right_knee_motor_link" pos="0 0 -0.7">
+              <inertial pos="0 0 0" mass="0.3" diag="0.002 0.002 0.002"/>
+              <geom name="right_knee_motor_link_visual" type="cylinder" size="0.2 0.075" material="black"
+                    condim="4" contype="1" conaffinity="15" friction="0.9 0.2 0.2" solref="0.001 2"/>
+
+              <body name="right_shin_stand_link" pos="0 0 0">
+                <joint name="right_knee_joint" type="hinge" axis="0 1 0" range="0 1.5"
+                       limited="true" damping="0.01" armature="0.01" frictionloss="0.01"/>
+                <inertial pos="0 0 -0.35" mass="1.2" diag="0.065 0.053 0.02"/>
+                <geom name="right_shin_stand_link_visual" type="box" size="0.1 0.1 0.35" material="grey"
+                      pos="0 0 -0.35" condim="4" contype="1" conaffinity="15" friction="0.9 0.2 0.2" solref="0.001 2"/>
+              </body>
+            </body>
+          </body>
+        </body>
+
+      </body>
+    </body>
+  </worldbody>
+
+  <!-- Actuators -->
+  <actuator>
+    <position name="left_hip_joint_ctrl" joint="left_hip_joint" forcerange="-60 60" forcelimited="true" ctrlrange="-1.5 1.5" ctrllimited="true"/>
+    <position name="left_knee_joint_ctrl" joint="left_knee_joint" forcerange="-40 40" forcelimited="true" ctrlrange="0 1.5" ctrllimited="true"/>
+    <position name="right_hip_joint_ctrl" joint="right_hip_joint" forcerange="-60 60" forcelimited="true" ctrlrange="-1.5 1.5" ctrllimited="true"/>
+    <position name="right_knee_joint_ctrl" joint="right_knee_joint" forcerange="-40 40" forcelimited="true" ctrlrange="0 1.5" ctrllimited="true"/>
+  </actuator>
+
+  <!-- Sensors -->
+  <sensor>
+    <framepos name="base_link_pos" objtype="site" objname="root_site"/>
+    <framequat name="base_link_quat" objtype="site" objname="root_site"/>
+    <framelinvel name="base_link_vel" objtype="site" objname="root_site"/>
+    <frameangvel name="base_link_ang_vel" objtype="site" objname="root_site"/>
+  </sensor>
+
+</mujoco>

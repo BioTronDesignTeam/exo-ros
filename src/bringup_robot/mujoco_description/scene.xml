@@ -1,0 +1,21 @@
+<mujoco>
+  <!-- World settings -->
+  <option gravity="0 0 -9.81" timestep="0.002"/>
+  
+  <worldbody>
+    <geom name="floor" type="plane" pos="0 0 0" size="5 5 0.1" rgba="0.8 0.8 0.8 1"/>
+    
+    <include file="exo_model.mujoco.xml"/>
+    
+    <body name="box1" pos="1 0 0.5">
+      <geom type="box" size="0.2 0.2 0.2" rgba="1 0 0 1"/>
+    </body>
+  </worldbody>
+
+  <visual>
+    <camera name="cam1" pos="2 2 1" xyaxes="1 0 0 0 1 0"/>
+  </visual>
+
+  <!-- ROS2 configuration -->
+  <include file="mujoco_control.xml"/>
+</mujoco>

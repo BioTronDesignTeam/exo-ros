@@ -3,6 +3,7 @@ build/
 install/
 log/
 .vscode/
+.venv
 
 # dependencies
 *node_modules
