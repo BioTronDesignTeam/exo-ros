@@ -1,0 +1,627 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="MK1_FB900_Full_Body_Assembly_Flattned4">
+  <link
+    name="Back_Plate_Link">
+    <inertial>
+      <origin
+        xyz="0.71491 -1.3462 0.96794"
+        rpy="0 0 0" />
+      <mass
+        value="0.7926" />
+      <inertia
+        ixx="0.001221"
+        ixy="-9.4402E-13"
+        ixz="6.2291E-12"
+        iyy="0.015291"
+        iyz="8.3935E-13"
+        izz="0.014076" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://assembly/meshes/Back_Plate_Link.STL" />
+      </geometry>
+      <material
+        name="6061 Alloy">
+        <color
+          rgba="0.75 0.75 0.75 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://assembly/meshes/Back_Plate_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="Right_HChassie_Link">
+    <inertial>
+      <origin
+        xyz="-0.34065 1.0882 1.0798"
+        rpy="0 0 0" />
+      <mass
+        value="1.2014" />
+      <inertia
+        ixx="0.0050389"
+        ixy="4.5584E-08"
+        ixz="-5.9862E-08"
+        iyy="0.0041224"
+        iyz="-0.0010223"
+        izz="0.0030684" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://assembly/meshes/Right_HChassie_Link.STL" />
+      </geometry>
+      <material
+        name="6061 Alloy">
+        <color
+          rgba="0.75 0.75 0.75 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://assembly/meshes/Right_HChassie_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Righ_HChassie_Joint"
+    type="prismatic">
+    <origin
+      xyz="0.59014 -2.637 -0.22002"
+      rpy="1.5708 0 3.1416" />
+    <parent
+      link="Back_Plate_Link" />
+    <child
+      link="Right_HChassie_Link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-0.146"
+      upper="0"
+      effort="100"
+      velocity="0.1" />
+  </joint>
+  <link
+    name="Right_Hip_Shaft_Link">
+    <inertial>
+      <origin
+        xyz="0 0.076037 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.24714" />
+      <inertia
+        ixx="0.00031397"
+        ixy="-3.1231E-20"
+        ixz="-3.3881E-21"
+        iyy="2.9765E-05"
+        iyz="1.3962E-19"
+        izz="0.00031429" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://assembly/meshes/Right_Hip_Shaft_Link.STL" />
+      </geometry>
+      <material
+        name="6061 Alloy">
+        <color
+          rgba="0.75 0.75 0.75 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://assembly/meshes/Right_Hip_Shaft_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Right_Hip_Shaft_Joint"
+    type="revolute">
+    <origin
+      xyz="-0.40893 0.94591 1.0082"
+      rpy="3.1416 -0.1975 3.1416" />
+    <parent
+      link="Right_HChassie_Link" />
+    <child
+      link="Right_Hip_Shaft_Link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="10"
+      velocity="2" />
+  </joint>
+  <link
+    name="Right_Hip_Cycloidal_Link">
+    <inertial>
+      <origin
+        xyz="0.0036372 0.001349 -0.050207"
+        rpy="0 0 0" />
+      <mass
+        value="1.3722" />
+      <inertia
+        ixx="0.0020018"
+        ixy="-4.6079E-19"
+        ixz="8.7755E-07"
+        iyy="0.0011818"
+        iyz="-4.3258E-18"
+        izz="0.0010768" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://assembly/meshes/Right_Hip_Cycloidal_Link.STL" />
+      </geometry>
+      <material
+        name="6061 Alloy">
+        <color
+          rgba="0.75 0.75 0.75 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://assembly/meshes/Right_Hip_Cycloidal_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Right_Hip_Cycloidal_Joint"
+    type="revolute">
+    <origin
+      xyz="0 0.01 0"
+      rpy="-1.5708 0 -0.046308" />
+    <parent
+      link="Right_Hip_Shaft_Link" />
+    <child
+      link="Right_Hip_Cycloidal_Link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="10"
+      velocity="2" />
+  </joint>
+  <link
+    name="Right_UpperLegs_Link">
+    <inertial>
+      <origin
+        xyz="0.068532 -0.18637 0.043853"
+        rpy="0 0 0" />
+      <mass
+        value="3.7472" />
+      <inertia
+        ixx="0.0091149"
+        ixy="0.00043515"
+        ixz="-4.1472E-05"
+        iyy="0.0055451"
+        iyz="-0.00020022"
+        izz="0.0045505" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://assembly/meshes/Right_UpperLegs_Link.STL" />
+      </geometry>
+      <material
+        name="6061Alloy">
+        <color
+          rgba="0.75 0.75 0.75 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://assembly/meshes/Right_UpperLegs_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Right_UpperLeggs_Joint"
+    type="revolute">
+    <origin
+      xyz="0.0027775 0 -0.059936"
+      rpy="2.8664 0.046489 -3.0297" />
+    <parent
+      link="Right_Hip_Cycloidal_Link" />
+    <child
+      link="Right_UpperLegs_Link" />
+    <axis
+      xyz="0.99268 0.11998 -0.01411" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="10"
+      velocity="2" />
+  </joint>
+  <link
+    name="Right_LowerLegs_Link">
+    <inertial>
+      <origin
+        xyz="0.054979 -0.12529 -0.066615"
+        rpy="0 0 0" />
+      <mass
+        value="2.5848" />
+      <inertia
+        ixx="0.0055801"
+        ixy="0.00034455"
+        ixz="3.7127E-05"
+        iyy="0.0026422"
+        iyz="-0.00058882"
+        izz="0.0034749" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://assembly/meshes/Right_LowerLegs_Link.STL" />
+      </geometry>
+      <material
+        name="6061 Alloy">
+        <color
+          rgba="0.75 0.75 0.75 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://assembly/meshes/Right_LowerLegs_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Right_LowerLegs_Joint"
+    type="revolute">
+    <origin
+      xyz="0.06191 -0.49997 0.10425"
+      rpy="-0.84857 -0.085607 0.051493" />
+    <parent
+      link="Right_UpperLegs_Link" />
+    <child
+      link="Right_LowerLegs_Link" />
+    <axis
+      xyz="0.99268 0.11998 -0.01411" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="10"
+      velocity="2" />
+  </joint>
+  <link
+    name="Left_HChassie_Link">
+    <inertial>
+      <origin
+        xyz="0.087332 1.0744 1.004"
+        rpy="0 0 0" />
+      <mass
+        value="1.2014" />
+      <inertia
+        ixx="0.0050389"
+        ixy="7.7304E-08"
+        ixz="9.3884E-08"
+        iyy="0.0041224"
+        iyz="0.0010223"
+        izz="0.0030684" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://assembly/meshes/Left_HChassie_Link.STL" />
+      </geometry>
+      <material
+        name="6061 Alloy">
+        <color
+          rgba="0.75 0.75 0.75 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://assembly/meshes/Left_HChassie_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Left_HChassie_Joint"
+    type="prismatic">
+    <origin
+      xyz="0.45236 -0.55313 -0.20418"
+      rpy="1.5708 0 0" />
+    <parent
+      link="Back_Plate_Link" />
+    <child
+      link="Left_HChassie_Link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-0.10534"
+      upper="0.040658"
+      effort="100"
+      velocity="0.1" />
+  </joint>
+  <link
+    name="Left_Hip_Shaft_Link">
+    <inertial>
+      <origin
+        xyz="0 0.076037 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.24714" />
+      <inertia
+        ixx="0.00031397"
+        ixy="-1.5901E-19"
+        ixz="3.3881E-20"
+        iyy="2.9765E-05"
+        iyz="-2.3776E-19"
+        izz="0.00031429" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://assembly/meshes/Left_Hip_Shaft_Link.STL" />
+      </geometry>
+      <material
+        name="6061 Alloy">
+        <color
+          rgba="0.75 0.75 0.75 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://assembly/meshes/Left_Hip_Shaft_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Left_Hip_Shaft_Joint"
+    type="revolute">
+    <origin
+      xyz="0.01905 0.93008 1.0756"
+      rpy="0 -0.26875 0" />
+    <parent
+      link="Left_HChassie_Link" />
+    <child
+      link="Left_Hip_Shaft_Link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="Left_Hip_Cycloidal_Link">
+    <inertial>
+      <origin
+        xyz="0.0043123 0.001349 -0.050261"
+        rpy="0 0 0" />
+      <mass
+        value="1.3722" />
+      <inertia
+        ixx="0.0020018"
+        ixy="-3.5237E-19"
+        ixz="8.7755E-07"
+        iyy="0.0011818"
+        iyz="-4.1674E-18"
+        izz="0.0010768" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://assembly/meshes/Left_Hip_Cycloidal_Link.STL" />
+      </geometry>
+      <material
+        name="6061 Alloy">
+        <color
+          rgba="0.75 0.75 0.75 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://assembly/meshes/Left_Hip_Cycloidal_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Left_Hip_Cycloidal_Joint"
+    type="revolute">
+    <origin
+      xyz="0 0.01 0"
+      rpy="1.5708 0 2.9364" />
+    <parent
+      link="Left_Hip_Shaft_Link" />
+    <child
+      link="Left_Hip_Cycloidal_Link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="10"
+      velocity="2" />
+  </joint>
+  <link
+    name="Left_UpperLegs_Link">
+    <inertial>
+      <origin
+        xyz="0.065003 -0.18659 0.038378"
+        rpy="0 0 0" />
+      <mass
+        value="3.7472" />
+      <inertia
+        ixx="0.0091149"
+        ixy="0.00043515"
+        ixz="-4.1472E-05"
+        iyy="0.0055451"
+        iyz="-0.00020022"
+        izz="0.0045505" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://assembly/meshes/Left_UpperLegs_Link.STL" />
+      </geometry>
+      <material
+        name="6061 Alloy">
+        <color
+          rgba="0.75 0.75 0.75 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://assembly/meshes/Left_UpperLegs_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Left_UpperLegs_Joint"
+    type="revolute">
+    <origin
+      xyz="0 0.0013208 -0.065357"
+      rpy="0.96197 0.090766 3.0613" />
+    <parent
+      link="Left_Hip_Cycloidal_Link" />
+    <child
+      link="Left_UpperLegs_Link" />
+    <axis
+      xyz="0.99268 0.11998 -0.01411" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="10"
+      velocity="2" />
+  </joint>
+  <link
+    name="Left_LowerLegs_Link">
+    <inertial>
+      <origin
+        xyz="0.051552 -0.1257 -0.066566"
+        rpy="0 0 0" />
+      <mass
+        value="2.5848" />
+      <inertia
+        ixx="0.0055801"
+        ixy="0.00034455"
+        ixz="3.7128E-05"
+        iyy="0.0026422"
+        iyz="-0.00058882"
+        izz="0.0034749" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://assembly/meshes/Left_LowerLegs_Link.STL" />
+      </geometry>
+      <material
+        name="6061 Alloy">
+        <color
+          rgba="0.75 0.75 0.75 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://assembly/meshes/Left_LowerLegs_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Left_LowerLegs_Joint"
+    type="revolute">
+    <origin
+      xyz="0.061808 -0.49978 0.098732"
+      rpy="0.36213 0.043725 0.0028023" />
+    <parent
+      link="Left_UpperLegs_Link" />
+    <child
+      link="Left_LowerLegs_Link" />
+    <axis
+      xyz="0.99268 0.11998 -0.01411" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="10"
+      velocity="2" />
+  </joint>
+</robot>
