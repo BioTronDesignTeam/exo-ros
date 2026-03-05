@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.20)
 project(bringup_robot)
 
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
@@ -10,7 +12,7 @@ find_package(ament_cmake REQUIRED)
 
 # include other resources
 install(
-  DIRECTORY launch urdf config
+  DIRECTORY launch config
   DESTINATION share/${PROJECT_NAME}
 )
 

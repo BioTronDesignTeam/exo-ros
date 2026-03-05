@@ -1,0 +1,16 @@
+digraph G {
+"Back_Plate_Link" -> "Left_HChassie_Link"[label=" Broadcaster: default_authority\nAverage rate: 10.305\nBuffer length: 3.202\nMost recent transform: 1772743086.435427\nOldest transform: 1772743083.233187\n"];
+"Left_Hip_Shaft_Link" -> "Left_Hip_Cycloidal_Link"[label=" Broadcaster: default_authority\nAverage rate: 10.305\nBuffer length: 3.202\nMost recent transform: 1772743086.435427\nOldest transform: 1772743083.233187\n"];
+"Left_HChassie_Link" -> "Left_Hip_Shaft_Link"[label=" Broadcaster: default_authority\nAverage rate: 10.305\nBuffer length: 3.202\nMost recent transform: 1772743086.435427\nOldest transform: 1772743083.233187\n"];
+"Left_UpperLegs_Link" -> "Left_LowerLegs_Link"[label=" Broadcaster: default_authority\nAverage rate: 10.305\nBuffer length: 3.202\nMost recent transform: 1772743086.435427\nOldest transform: 1772743083.233187\n"];
+"Left_Hip_Cycloidal_Link" -> "Left_UpperLegs_Link"[label=" Broadcaster: default_authority\nAverage rate: 10.305\nBuffer length: 3.202\nMost recent transform: 1772743086.435427\nOldest transform: 1772743083.233187\n"];
+"Back_Plate_Link" -> "Right_HChassie_Link"[label=" Broadcaster: default_authority\nAverage rate: 10.305\nBuffer length: 3.202\nMost recent transform: 1772743086.435427\nOldest transform: 1772743083.233187\n"];
+"Right_Hip_Shaft_Link" -> "Right_Hip_Cycloidal_Link"[label=" Broadcaster: default_authority\nAverage rate: 10.305\nBuffer length: 3.202\nMost recent transform: 1772743086.435427\nOldest transform: 1772743083.233187\n"];
+"Right_HChassie_Link" -> "Right_Hip_Shaft_Link"[label=" Broadcaster: default_authority\nAverage rate: 10.305\nBuffer length: 3.202\nMost recent transform: 1772743086.435427\nOldest transform: 1772743083.233187\n"];
+"Right_UpperLegs_Link" -> "Right_LowerLegs_Link"[label=" Broadcaster: default_authority\nAverage rate: 10.305\nBuffer length: 3.202\nMost recent transform: 1772743086.435427\nOldest transform: 1772743083.233187\n"];
+"Right_Hip_Cycloidal_Link" -> "Right_UpperLegs_Link"[label=" Broadcaster: default_authority\nAverage rate: 10.305\nBuffer length: 3.202\nMost recent transform: 1772743086.435427\nOldest transform: 1772743083.233187\n"];
+edge [style=invis];
+ subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
+"Recorded at time: 1772743086.4536302"[ shape=plaintext ] ;
+}->"Back_Plate_Link";
+}
