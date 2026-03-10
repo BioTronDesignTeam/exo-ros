@@ -1,0 +1,178 @@
+<?xml version="1.0"?>
+<robot name="Human">
+
+    <material name="bone_white">
+        <color rgba="0.9 0.85 0.75 1.0"/>
+    </material>
+
+    <!--
+         HIP  
+    -->
+    <link name="base_link">
+        <visual name="hip">
+            <geometry>
+                <box size="0.470 0.115 0.143"/>
+            </geometry>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <material name="bone_white"/>
+        </visual>
+
+        <visual name="front_panel">
+            <geometry>
+                <box size="0.080 0.020 0.050"/>
+            </geometry>
+            <origin xyz="0.0 0.0675 0.01" rpy="0.0 0.0 0.0"/>
+            <material name="bone_white"/>
+        </visual>
+    </link>
+
+    <!--
+         LEFT LEG
+    -->
+    <link name="left_thigh">
+        <visual name="left_thigh_visual">
+            <geometry>
+                <cylinder radius="0.089" length="0.43533"/>
+            </geometry>
+            <origin xyz="0.0 0.0 -0.217665" rpy="0.0 0.0 0.0"/>
+            <material name="bone_white"/>
+        </visual>
+    </link>
+
+    <link name="left_hip_int1"/>
+    <link name="left_hip_int2"/>
+
+    <joint name="left_hip_flexion" type="revolute">
+        <parent link="base_link"/>
+        <child  link="left_hip_int1"/>
+        <origin xyz="-0.095 0.0 -0.0715" rpy="0.0 0.0 0.0"/>
+        <axis xyz="1 0 0"/>
+        <limit lower="-0.349" upper="2.094" effort="500" velocity="3.0"/>
+    </joint>
+
+    <joint name="left_hip_abduction" type="revolute">
+        <parent link="left_hip_int1"/>
+        <child  link="left_hip_int2"/>
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <axis xyz="0 1 0"/>
+        <limit lower="-0.349" upper="0.785" effort="500" velocity="3.0"/>
+    </joint>
+
+    <joint name="left_hip_rotation" type="revolute">
+        <parent link="left_hip_int2"/>
+        <child  link="left_thigh"/>
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-0.785" upper="0.785" effort="500" velocity="3.0"/>
+    </joint>
+
+    <link name="left_shin">
+        <visual name="left_shin_visual">
+            <geometry>
+                <cylinder radius="0.025" length="0.34925"/>
+            </geometry>
+            <origin xyz="0.0 0.0 -0.174625" rpy="0.0 0.0 0.0"/>
+            <material name="bone_white"/>
+        </visual>
+    </link>
+
+    <joint name="left_knee_flexion" type="revolute">
+        <parent link="left_thigh"/>
+        <child  link="left_shin"/>
+        <origin xyz="0.0 0.0 -0.43533" rpy="0.0 0.0 0.0"/>
+        <axis xyz="-1 0 0"/>
+        <limit lower="-0.087" upper="2.443" effort="500" velocity="3.0"/>
+    </joint>
+
+    <link name="left_shoe">
+        <visual name="left_shoe_visual">
+            <geometry>
+                <box size="0.100 0.230 0.060"/>
+            </geometry>
+            <origin xyz="0.0 0.040 -0.030" rpy="0.0 0.0 0.0"/>
+            <material name="bone_white"/>
+        </visual>
+    </link>
+
+    <joint name="left_shoe_joint" type="fixed">
+        <parent link="left_shin"/>
+        <child  link="left_shoe"/>
+        <origin xyz="0.0 0.0 -0.34925" rpy="0.0 0.0 0.0"/>
+    </joint>
+
+    <!--
+         RIGHT LEG
+    -->
+    <link name="right_thigh">
+        <visual name="right_thigh_visual">
+            <geometry>
+                <cylinder radius="0.089" length="0.43533"/>
+            </geometry>
+            <origin xyz="0.0 0.0 -0.217665" rpy="0.0 0.0 0.0"/>
+            <material name="bone_white"/>
+        </visual>
+    </link>
+
+    <link name="right_hip_int1"/>
+    <link name="right_hip_int2"/>
+
+    <joint name="right_hip_flexion" type="revolute">
+        <parent link="base_link"/>
+        <child  link="right_hip_int1"/>
+        <origin xyz="0.095 0.0 -0.0715" rpy="0.0 0.0 0.0"/>
+        <axis xyz="1 0 0"/>
+        <limit lower="-0.349" upper="2.094" effort="500" velocity="3.0"/>
+    </joint>
+
+    <joint name="right_hip_abduction" type="revolute">
+        <parent link="right_hip_int1"/>
+        <child  link="right_hip_int2"/>
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <axis xyz="0 1 0"/>
+        <limit lower="-0.785" upper="0.349" effort="500" velocity="3.0"/>
+    </joint>
+
+    <joint name="right_hip_rotation" type="revolute">
+        <parent link="right_hip_int2"/>
+        <child  link="right_thigh"/>
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-0.785" upper="0.785" effort="500" velocity="3.0"/>
+    </joint>
+
+    <link name="right_shin">
+        <visual name="right_shin_visual">
+            <geometry>
+                <cylinder radius="0.025" length="0.34925"/>
+            </geometry>
+            <origin xyz="0.0 0.0 -0.174625" rpy="0.0 0.0 0.0"/>
+            <material name="bone_white"/>
+        </visual>
+    </link>
+
+    <joint name="right_knee_flexion" type="revolute">
+        <parent link="right_thigh"/>
+        <child  link="right_shin"/>
+        <origin xyz="0.0 0.0 -0.43533" rpy="0.0 0.0 0.0"/>
+        <axis xyz="-1 0 0"/>
+        <limit lower="-0.087" upper="2.443" effort="500" velocity="3.0"/>
+    </joint>
+
+    <link name="right_shoe">
+        <visual name="right_shoe_visual">
+            <geometry>
+                <box size="0.100 0.230 0.060"/>
+            </geometry>
+            <origin xyz="0.0 0.040 -0.030" rpy="0.0 0.0 0.0"/>
+            <material name="bone_white"/>
+        </visual>
+    </link>
+
+    <joint name="right_shoe_joint" type="fixed">
+        <parent link="right_shin"/>
+        <child  link="right_shoe"/>
+        <origin xyz="0.0 0.0 -0.34925" rpy="0.0 0.0 0.0"/>
+    </joint>
+
+</robot>
+
