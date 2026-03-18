@@ -13,7 +13,7 @@ def generate_launch_description():
     urdf_file = os.path.join(
         pkg_path,
         'urdf',
-        'MK1_FB900_Full_Body_Assembly_Flattned4.urdf'
+        'MK1_FB900_Full_Body_Assembly_Flattned7.urdf'
     )
 
     rviz_config = os.path.join(pkg_path, 'urdf.rviz')

@@ -9,7 +9,6 @@ install(DIRECTORY
   urdf
   config
   meshes
-  textures
   DESTINATION share/${PROJECT_NAME}
 )
 
